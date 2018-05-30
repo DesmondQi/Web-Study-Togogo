@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-app="myApp" >
+			<h1>{{lastname}}家庭成员：</h1>
+			<ul ng-controller="myCtrl">
+				<li ng-repeat="x in names">{{x}} {{lastname}}</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var app=angular.module("myApp",[]);
+			app.controller("myCtrl",function ($scope,$rootScope) {
+				$rootScope.lastname="Refsnes";
+				$scope.names=["Emil","Tobias","Linus"];
+			})
+		</script>
+	</body>
+</html>

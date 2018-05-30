@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="myCtrl">
+				名：<input type="text" ng-model="givenName" /><br />
+				 姓：<input type="text" ng-model="familyName" /><br /> 
+				姓名：{{familyName+givenName}}
+			</div>
+			<ul ng-controller="nameCtrl">
+				<li ng-repeat="x in names">
+					{{x.name+","+x.country}}
+				</li>
+			</ul>
+		</div>
+		<script src="js/personalController.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+
+</html>

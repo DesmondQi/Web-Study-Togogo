@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div ng-app="" ng-init="quantity=1;price=5">
+			<h2>价格计算器</h2> 数量：
+			<input type="number" ng-model="quantity" /><br /> 价格：
+			<input type="number" ng-model="price" /><br />
+			<p>总价为：{{quantity*price}}</p>
+
+			<p ng-init="nameArr=['Jani','Hege','Kai']">使用ng-repeat循环数组</p>
+			<ul>
+				<li ng-repeat="x in nameArr">
+					{{x}}
+				</li>
+			</ul>
+
+			<p ng-init="names=[{name:'Jani',country:'Norway'},{name:'Hege',country:'Sweden'},{name:'Kai',country:'Denmark'}]">循环对象</p>
+			<ul>
+				<li ng-repeat="obj in names">
+					{{"name "+obj.name+","+"country "+obj.country}}
+				</li>
+			</ul>
+		</div>
+	</body>
+
+</html>

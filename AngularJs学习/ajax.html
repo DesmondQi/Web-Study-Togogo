@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="httpCtrl">
+				<ul>
+					<li ng-repeat="x in sites"><a href={{"http://"+x.Url}}>{{x.Name}}</a></li>
+				</ul>
+				<h2>{{error}}</h2>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var app=angular.module("myApp",[]);
+			app.controller("httpCtrl",function ($scope,$http) {
+				$http({
+					method:"GET",
+					url:"sites.json"
+				}).then(function successCallback (response) {
+					console.log(response);
+					$scope.sites=response.data.sites;
+				},function errorCallback (response) {
+					$scope.error=response;
+				})
+			})
+		</script>
+	</body>
+</html>

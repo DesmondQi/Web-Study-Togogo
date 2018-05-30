@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div ng-app="myApp">
+			<div ng-controller="nameCtrl">
+				英文名1：<input type="text" ng-model="lastname" /> 英文名2：
+				<input type="text" ng-model="firstname" />
+				<p>姓名为{{lastname|uppercase}}</p>
+				<p>姓名为：{{firstname|lowercase}}</p>
+			</div>
+			<div ng-controller="costCtrl">
+				个数：<input type="number" ng-model="quantity" /> 单价：
+				<input type="number" ng-model="price" />
+				<p>总价：{{quantity*price|currency}}</p>
+			</div>
+			<div ng-controller="namesCtrl">
+				<input type="text" ng-model="text" />
+				<ul>
+					<li ng-repeat="x in names|orderBy:'country'|filter:text">{{x.name+","+x.country}}</li>
+				</ul>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var app = angular.module("myApp", []);
+			app.controller("nameCtrl", function($scope) {
+				$scope.lastname = "Desmond";
+				$scope.firstname = "Drew";
+			});
+			app.controller("costCtrl", function($scope) {
+				$scope.quantity = 1;
+				$scope.price = 9.9;
+			});
+			app.controller("namesCtrl", function($scope) {
+				$scope.names = [{
+					name: "Kai",
+					country: "Danmark"
+				}, {
+					name: "John",
+					country: "Norway"
+				},{
+					name:"Mark",
+					country:"Germany"
+				}]
+			})
+		</script>
+	</body>
+
+</html>

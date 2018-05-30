@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-app="" ng-init="quality=1;cost=5">
+			<p>总价为：{{quality*cost}}</p>
+			<p>总价为：<span ng-bind="quality*cost"></span></p>
+			<p ng-init="firstname='John';lastname='Doe'">姓名为：{{firstname+" "+lastname}}</p>
+			<p>姓名为：<span ng-bind="firstname+' '+lastname"></span></p>
+			<p ng-init="person={firstname:'Desmond',lastname:'Doss'}">姓名为：{{person.firstname+" "+person.lastname}}</p>
+			<p>姓名为：<span ng-bind="person.firstname+' '+person.lastname"></span></p>
+			<p ng-init="points=[1,2,3,4,5]">第三个值为：{{points[2]}}</p>
+			<p>第三个值为：<span ng-bind="points[2]"></span></p>
+		</div>
+	</body>
+</html>

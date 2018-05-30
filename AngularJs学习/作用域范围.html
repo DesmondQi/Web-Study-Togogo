@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div ng-app="myApp">
+			<ul ng-controller="myCtrl">
+				<li ng-repeat="x in names">{{x}}</li>
+			</ul>
+			<ol ng-controller="myctrl">
+				<li ng-repeat="y in list">{{y}}</li>
+			</ol>
+		</div>
+		<script type="text/javascript">
+			var app=angular.module("myApp",[]);
+			app.controller("myCtrl",function ($scope) {
+				$scope.names=["Emil","Tobias","Linus"];
+				//$scope.list=["tub","web","java"];
+			});
+			app.controller("myctrl",function ($scope) {
+				//$scope.names=["Emil","Tobias","Linus"];
+				$scope.list=["tub","web","java"];
+			})
+		</script>
+	</body>
+</html>
