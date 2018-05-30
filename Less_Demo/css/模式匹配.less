@@ -1,0 +1,32 @@
+.mixin(dark,@color){
+    color: darken(@color,10%);
+}
+
+.mixin(light,@color){
+    color: lighten(@color,10%);
+}
+
+.mixin(@_,@color){
+    display: block;
+}
+
+.lightClass{
+    @switch:light;
+    .mixin(@switch,#888);
+}
+.darkClass{
+    @switch:dark;
+    .mixin(@switch,#ff00ff);
+}
+
+.truth(@a) when(@a){
+    font-size: @a;
+}
+
+.truth(@a) when(@a=true){
+    color: green;
+}
+
+.class{
+    .truth(40);
+}

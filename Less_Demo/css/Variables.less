@@ -1,0 +1,49 @@
+@color:red;
+
+.box{
+    border: 1px solid @color;
+}
+
+@nice-blue:#5B83AD;
+@light-blue:@nice-blue+#111;
+
+#header{
+    color: @light-blue;
+}
+
+@link-color:#428bca;
+@link-color-hover:darken(@link-color,10%);
+
+a:link{
+    color: @link-color;
+}
+a:hover{
+    color: @link-color-hover;
+}
+.widget{
+    color: #fff;
+    background-color: @link-color;
+}
+
+//将变量应用于选择器
+@my-selector:banner;
+
+.@{my-selector}{
+    font-weight: bold;
+    line-height: 40px;
+    margin: 0 auto;
+}
+
+//URL
+@images:"../img";
+
+body{
+    color: #444;
+    background: url("@{images}/1.jpg");
+}
+
+
+
+
+
+

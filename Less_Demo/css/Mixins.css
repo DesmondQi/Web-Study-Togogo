@@ -1,0 +1,20 @@
+.border {
+  border-top: #ff1111 solid 1px;
+  border-bottom: blue dashed 1px;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  border-top: #ff1111 solid 1px;
+  border-bottom: blue dashed 1px;
+}
+.a,
+#b {
+  color: red;
+}
+.mixin-class {
+  color: red;
+}
+.mixin-id {
+  color: red;
+}

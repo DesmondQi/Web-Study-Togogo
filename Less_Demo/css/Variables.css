@@ -1,0 +1,25 @@
+.box {
+  border: 1px solid red;
+}
+#header {
+  color: #6c94be;
+}
+a:link {
+  color: #428bca;
+}
+a:hover {
+  color: #3071a9;
+}
+.widget {
+  color: #fff;
+  background-color: #428bca;
+}
+.banner {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+}
+body {
+  color: #444;
+  background: url("../img/1.jpg");
+}

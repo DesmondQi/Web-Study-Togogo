@@ -1,0 +1,15 @@
+#header {
+  color: black;
+}
+#header .navigator {
+  font-size: 12px;
+}
+#header .logo {
+  width: 100px;
+}
+.bordered.float {
+  float: left;
+}
+.bordered .top {
+  margin: 5px;
+}
